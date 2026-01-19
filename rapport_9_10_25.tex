@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+
+% --- Packages de base ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+% --- Mise en page ---
+\geometry{a4paper, margin=2.5cm}
+
+% --- Couleurs modernes et douces ---
+\definecolor{maincolor}{HTML}{1E88E5} % bleu clair
+\definecolor{lightblue}{HTML}{E3F2FD}
+\definecolor{textgray}{HTML}{333333}
+
+% --- Police et couleur du texte ---
+\renewcommand{\familydefault}{\sfdefault}
+\color{textgray}
+
+% --- Titres stylés ---
+\titleformat{\section}
+{\Large\bfseries\color{maincolor}}
+{\thesection.}{1em}{}
+
+% --- En-têtes et pieds de page stylés ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\color{maincolor}\textbf{Les commandes Git}}
+\fancyhead[R]{\color{maincolor}Hadil Boutaouar}
+\fancyfoot[C]{\color{maincolor}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- Lien coloré ---
+\hypersetup{
+	colorlinks=true,
+	linkcolor=maincolor,
+	urlcolor=maincolor
+}
+
+% --- Style d'encadré pour les commandes ---
+\tcbset{
+	colback=lightblue,
+	colframe=maincolor,
+	boxrule=0.5pt,
+	arc=3pt,
+	left=6pt,
+	right=6pt,
+	top=4pt,
+	bottom=4pt,
+}
+
+% --- Titre du document ---
+\title{\textbf{Les commandes utilisées sur Git}}
+\author{Hadil Boutaouar}
+\date{\today}
+
+\begin{document}
+	
+	% --- Page de titre simplifiée (sans image) ---
+	\begin{titlepage}
+		\centering
+		\vspace*{3cm}
+		{\Huge\color{maincolor}\textbf{Les commandes utilisées sur Git}}\\[1cm]
+		{\Large Par : \textbf{Hadil Boutaouar}}\\[1cm]
+		{\large \today}\\[3cm]
+	
+	\end{titlepage}
+	
+	\newpage
+	
+	\section{Introduction}
+	Voici les 5 commandes principales utilisées par Hadil Boutaouar sur Git lors du TP de création de site web.
+	
+	\section{git init}
+	La commande \texttt{git init} initialise un nouveau dépôt Git local.
+	\begin{tcolorbox}
+		git init
+	\end{tcolorbox}
+	\textbf{Utilité :} Elle permet de commencer à suivre les fichiers d’un projet avec Git.
+	
+	\section{git add}
+	\texttt{git add} ajoute des fichiers à la zone de préparation avant un commit.
+	\begin{tcolorbox}
+		git add fichier.txt \\
+		git add .
+	\end{tcolorbox}
+	\textbf{Utilité :} Sélectionner les fichiers à inclure dans le prochain commit.
+	
+	\section{git status}
+	Affiche l’état actuel du dépôt Git (fichiers modifiés, ajoutés ou en attente de commit).
+	\begin{tcolorbox}
+		git status
+	\end{tcolorbox}
+	\textbf{Utilité :} Vérifie les changements avant de les enregistrer.
+	
+	\section{git commit}
+	\texttt{git commit} enregistre les modifications dans l’historique du projet avec un message descriptif.
+	\begin{tcolorbox}
+		git commit -m "Ajout du fichier de configuration"
+	\end{tcolorbox}
+	\textbf{Utilité :} Crée une version stable et identifiable du projet.
+	
+	\section{git push}
+	\texttt{git push} envoie les commits locaux vers un dépôt distant (comme GitHub).
+	\begin{tcolorbox}
+		git push origin main
+	\end{tcolorbox}
+	\textbf{Utilité :} Permet de partager les modifications avec d’autres collaborateurs.
+	
+\end{document}

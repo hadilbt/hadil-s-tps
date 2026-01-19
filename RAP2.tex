@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{array}
+\usepackage{longtable}
+
+\title{Rapport de Planification des Adresses IP \\ 10/14/2025}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Méthode de calcul du CIDR}
+La formule utilisée pour déterminer le CIDR est : 
+\[
+\text{CIDR} = 32 - \log_2(\text{nombre d'hotes} + 2)
+\]
+
+\section*{Plan d'adressage IP par établissement}
+
+\begin{longtable}{|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|>{\raggedright}p{3cm}|>{\raggedright}p{4cm}|>{\raggedright}p{3cm}|}
+\hline
+\textbf{Établissement} & \textbf{Nombre d'hôtes} & \textbf{CIDR / Masque} & \textbf{Plage d'adresses} & \textbf{Gateway / Broadcast} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Établissement} & \textbf{Nombre d'hôtes} & \textbf{CIDR / Masque} & \textbf{Plage d'adresses} & \textbf{Gateway / Broadcast} \\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+EIDIA & 300 & /23, 255.255.254.0 & 10.15.0.1 $\rightarrow$ 10.15.1.254 & Gateway: 10.15.0.1, Broadcast: 10.15.1.255 \\
+\hline
+AD & 100 & /25, 255.255.255.128 & 10.15.2.1 $\rightarrow$ 10.15.2.126 & Gateway: 10.15.2.1, Broadcast: 10.15.2.127 \\
+\hline
+MED & 20 & /27, 255.255.255.224 & 10.15.2.129 $\rightarrow$ 10.15.2.158 & Gateway: 10.15.2.129, Broadcast: 10.15.2.158 \\
+\hline
+\end{longtable}
+
+\end{document}
